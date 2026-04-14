@@ -13,11 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="application-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3><?= Html::encode($this->title) ?></h3>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Назад', ['update', 'id' => $model->id], ['class' => 'btn btn-outline-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'user_id',
             'created_at',
+            // [
+            //     'attribute' => '',
+            //     'value' => '',
+            // ],
             'date',
             'time',
             'weight',

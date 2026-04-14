@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\BoxType;
 
 /**
  * This is the model class for table "box_type".
