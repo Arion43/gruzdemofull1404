@@ -27,7 +27,7 @@ use yii\bootstrap5\Html;
                 ],
             ]); ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <?= $form->field($model, 'login')->textInput(['autofocus' => true]) ?>
 
             <?= $form->field($model, 'password')->passwordInput() ?>
 
@@ -44,7 +44,7 @@ use yii\bootstrap5\Html;
             <?php ActiveForm::end(); ?>
 
             <div style="color:#999;">
-                <strong>admin/</strong>
+                <strong>admin/gruzovik2024</strong>
             </div>
 
         </div>
