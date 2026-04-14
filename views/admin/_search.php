@@ -1,7 +1,9 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap5\Html;
+use yii\bootstrap5\ActiveForm;
+use app\models\BoxType;
+use app\models\Status;
 
 /** @var yii\web\View $this */
 /** @var app\models\ApplicationSearch $model */
@@ -18,31 +20,19 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
     <?= $form->field($model, 'user_id') ?>
 
-    <?= $form->field($model, 'created_at') ?>
+    <?= $form->field($model, 'box_type_id')->dropDownList(
+        BoxType::getBoxType(), ['prompt' => 'Выберите тип груза']
+    ) ?>
 
-    <?= $form->field($model, 'date') ?>
-
-    <?= $form->field($model, 'time') ?>
-
-    <?php // echo $form->field($model, 'weight') ?>
-
-    <?php // echo $form->field($model, 'gabarite') ?>
-
-    <?php // echo $form->field($model, 'address_start') ?>
-
-    <?php // echo $form->field($model, 'address_finish') ?>
-
-    <?php // echo $form->field($model, 'box_type_id') ?>
-
-    <?php // echo $form->field($model, 'status_id') ?>
+    <?= $form->field($model, 'status_id')->dropDownList(
+        Status::getStatus(), ['prompt' => 'Выберите тип груза']
+    ) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Найти', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Сброс', ['class' => 'btn btn-outline-secondary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

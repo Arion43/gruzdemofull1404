@@ -6,9 +6,8 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\Application $model */
 
-$this->title = "Заявка №" . $model->id . 'от' . Yii::$app->formatter->asDatetime($model->created_at);
-$this->params['breadcrumbs'][] = ['label' => 'Applications', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = "Заявка №" . $model->id . 'от' . Yii::$app->formatter->asDatetime($model->created_at, 'php:d.m.Y H:i:s');
+
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="application-view">
@@ -17,13 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Назад', ['update', 'id' => $model->id], ['class' => 'btn btn-outline-primary']) ?>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
     </p>
 
     <?= DetailView::widget([

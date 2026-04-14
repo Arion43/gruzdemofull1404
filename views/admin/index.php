@@ -10,16 +10,12 @@ use yii\widgets\Pjax;
 /** @var app\models\ApplicationSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Applications';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="application-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3>Оформление доставки товара</h3>
 
-    <p>
-        <?= Html::a('Create Application', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?php Pjax::begin(); ?>
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
