@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\Application $model */
 
-$this->title = $model->id;
+$this->title = "Заявка №" . $model->id . 'от' . Yii::$app->formatter->asDatetime($model->created_at);
 $this->params['breadcrumbs'][] = ['label' => 'Applications', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -29,21 +29,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'user_id',
-            'created_at',
-            // [
-            //     'attribute' => '',
-            //     'value' => '',
-            // ],
+            [
+                'attribute' => 'user_id',
+                'value' => $model->user->full_name,
+            ],
             'date',
             'time',
             'weight',
             'gabarite',
             'address_start',
             'address_finish',
-            'box_type_id',
-            'status_id',
+            [
+                'attribute' => 'box_type_id',
+                'value' => $model->boxType->title,
+            ],
+            [
+                'attribute' => 'status_id',
+                'value' => $model->status->title,
+            ],
         ],
     ]) ?>
 
